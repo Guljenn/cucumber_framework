@@ -19,7 +19,7 @@ Feature: Validate Login Functionality
 
 @Valid
   Scenario: Validate user can login into Facebook account with valid credentials
-    When user enters an email as "jennincekara@gmail.com" and a password as "Z9b3hd76***"
+    When user enters an email as "jennincekara@gmail.com" and a password as "***********"
     And user then clicks on "Login" button
     Then user should see home page with their name "Guluzar Akin" displayed"
 
