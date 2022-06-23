@@ -1,0 +1,28 @@
+Feature: Wiki Search Functionality
+
+  @Wiki @Regression
+  Scenario Outline: Validate Wiki search
+    Given user navigates to "https://www.wikipedia.org/"
+    When user searches for "<key>" on Wikipedia
+    Then user should see "<key>" in the title
+    And user should see "<key>" in the url
+    And user should see "<key>" in the first heading
+    Examples:
+      | key              |
+      | Elon Musk        |
+      | Bill Gates       |
+      | Johnny Depp       |
+      | Post Malone      |
+      | Jack Harlow      |
+      | Lil Baby         |
+      | Bob the Builder  |
+      | Jennifer Lopez   |
+      | Robert Downey Jr. |
+      #| Irina Shayk      |
+      #| Kobe Bryant      |
+      #| Piero Manzoni    |
+
+  Scenario: Validate Wikipedia main languages
+    Given user navigates to "https://www.wikipedia.org/"
+    Then user should see below languages around the logo
+      | English | 日本語 | Español | Русский | Deutsch | Français | Italiano | 中文 | Português | Polski |
